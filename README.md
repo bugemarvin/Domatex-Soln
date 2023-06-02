@@ -1,6 +1,6 @@
 # Domatex Soln Solution
 
-Welcome to the Domatex Soln Solution, a health app built on the Django framework with integrated Bitcoin functionality. This solution, developed by Dovine K and Marvin Kurland, provides a secure platform for managing health-related activities and transactions using Bitcoin as the underlying payment system.
+Welcome to the Domatex Soln Solution, a health app built on the Django framework with integrated Bitcoin functionality. This solution, developed by [Dovine K](https://github.com/Dovineowuor) and [Marvin Kurland](https://github.com/Bugemarvin), provides a secure platform for managing health-related activities and transactions using Bitcoin as the underlying payment system.
 
 ## Features
 
@@ -20,7 +20,7 @@ To run the Domatex Soln Solution locally, follow these steps:
 
 1. Clone the repository:
 ```
-git clone https://github.com/[your-username]/domatex-soln.git
+git clone https://github.com/Dovineowuor/Domatex-Soln.git
 ```
 
 2. Install dependencies:
