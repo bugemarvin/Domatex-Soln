@@ -31,7 +31,7 @@
 ##############################################################################
 
 # Set the path to the local Git repository
-repo_path="~/Hackathon-Projects/Domatex-Soln"
+repo_path="/Domatex-Soln"
 
 # Set the Git remote URL
 remote_url="https://github.com/Dovineowuor/Domatex-Soln"
@@ -40,6 +40,10 @@ remote_url="https://github.com/Dovineowuor/Domatex-Soln"
 commit_and_push_changes() {
     # Change to the repository directory
     cd "$repo_path"
+
+    # Configure Git if not already configured
+    git config --global --get user.name > /dev/null || git config --global user.name "Dovineowuor"
+    git config --global --get user.email > /dev/null || git config --global user.email "owuordove@gmail.com"
 
     # Add all modified files to the Git repository
     modified_files=$(git status --porcelain | awk '$1 ~ /[MA]/ {print $2}')
@@ -71,18 +75,27 @@ check_editor_status() {
             echo "Repository files are open in an editor. Waiting for files to be closed..."
             sleep 1m
         else
+            echo "All files in the repository are closed. Proceeding with commit and push."
             break
         fi
     done
 }
 
-# Start the script asynchronously
-commit_and_push_changes &
-echo "Script started running asynchronously."
+# Add the script file to .gitignore
+# echo "git_manager.sh" >> "$repo_path/.gitignore"
 
-# Check for edited files every 30 minutes
+# Start the script asynchronously
 while true; do
-    sleep 30m
+    # Check for edited files every 30 minutes
+    sleep 5m
+
+    # Check if any files are open in an editor
     check_editor_status
+
+    # Wait for a grace period of 30 minutes before committing and pushing changes
+    sleep 5m
+
+    # Commit and push the changes
     commit_and_push_changes
 done
+
