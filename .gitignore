@@ -1,3 +1,6 @@
 replit.nix
 .*swp
-
+.env
+*__pycache__
+git_manager.sh
+*.pyc
