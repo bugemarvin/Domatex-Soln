@@ -1,6 +1,4 @@
 from django.shortcuts import render, redirect
-
-# Create your views here.
 from django.contrib.auth.decorators import login_required
 from .models import Transaction
 from .solana_utils import (
@@ -17,6 +15,8 @@ from .bitcoin_utils import (
     retrieve_bitcoin_blockchain_data,
 )
 from cryptography.fernet import Fernet
+import os
+import hashlib
 
 @login_required
 def wallet_home(request):
@@ -99,9 +99,9 @@ def blockchain_data_retrieval(request):
 def encrypt_data(data, encryption_key):
     cipher_suite = Fernet(encryption_key)
     encrypted_data = cipher_suite.encrypt(data.encode())
-    return encrypted_data
+    return encrypted_data.decode()
 
 def decrypt_data(encrypted_data, encryption_key):
     cipher_suite = Fernet(encryption_key)
     decrypted_data = cipher_suite.decrypt(encrypted_data.encode())
-    return decrypted_data
+    return decrypted_data.decode()
