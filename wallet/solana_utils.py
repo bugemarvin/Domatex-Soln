@@ -1,6 +1,6 @@
 from solana.account import Account
 from solana.rpc.api import Client
-from solana.publickey import PublicKey
+from solanapy.publickey import PublicKey
 
 # Initialize Solana client
 solana_client = Client("https://api.mainnet-beta.solana.com")  # Example Solana RPC endpoint
@@ -17,18 +17,18 @@ def transfer_solana_tokens(sender, recipient_address, amount):
     sender_account = Account(private_key=sender.solana_private_key)
     recipient_address = PublicKey(recipient_address)
 
-    # Example: solana_client.transfer()
+    solana_client.transfer()
 
 def get_solana_token_balance(user):
     # Retrieve the Solana token balance for the user
     account_address = PublicKey(user.solana_public_key)
 
-    # Example: solana_client.get_token_balance()
+    solana_client.get_token_balance()
 
 def interact_with_solana_program():
     # Interact with a Solana program
     pass
 
-def retrieve_blockchain_data():
+def retrieve_solana_blockchain_data():
     # Retrieve data from the Solana blockchain
     pass
