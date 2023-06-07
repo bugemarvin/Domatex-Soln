@@ -8,15 +8,19 @@ from .models import Wallet
 # Apply encryption/decryption logic within the appropriate views to protect data during transmission or storage.
 
 # Example AES encryption and decryption functions
+
+
 def encrypt_data(data, encryption_key):
     cipher_suite = Fernet(encryption_key)
     encrypted_data = cipher_suite.encrypt(data.encode())
     return encrypted_data
 
+
 def generate_private_key():
     # Generate a new random private key
     private_key = os.urandom(32)
     return private_key
+
 
 def create_bitcoin_wallet(user):
     # Retrieve the user's encryption key from the database
@@ -36,7 +40,8 @@ def create_bitcoin_wallet(user):
     encrypted_private_key = encrypt_data(wif_base58, encryption_key)
 
     # Create a new Wallet object for the user
-    bitcoin_wallet = Wallet.objects.create(user=user, wallet_address='', balance=0.0)
+    bitcoin_wallet = Wallet.objects.create(
+        user=user, wallet_address='', balance=0.0)
 
     # Store the encrypted private key in the database field of the Wallet object
     bitcoin_wallet.encrypted_private_key = encrypted_private_key
@@ -45,6 +50,7 @@ def create_bitcoin_wallet(user):
     # Perform additional operations as needed
 
     return bitcoin_wallet
+
 
 def base58encode(v):
     alphabet = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
