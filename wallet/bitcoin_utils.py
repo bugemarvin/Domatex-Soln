@@ -40,8 +40,7 @@ def create_bitcoin_wallet(user):
     encrypted_private_key = encrypt_data(wif_base58, encryption_key)
 
     # Create a new Wallet object for the user
-    bitcoin_wallet = Wallet.objects.create(
-        user=user, wallet_address='', balance=0.0)
+    bitcoin_wallet = Wallet.objects.create(user=user, wallet_address='', balance=0.0)
 
     # Store the encrypted private key in the database field of the Wallet object
     bitcoin_wallet.encrypted_private_key = encrypted_private_key
