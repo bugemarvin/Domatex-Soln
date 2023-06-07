@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'telehealth',
     'ehr',
     'wallet',
+    'solana',
+    'bitcoin',
 ]
 
 MIDDLEWARE = [
