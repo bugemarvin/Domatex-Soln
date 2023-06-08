@@ -7,7 +7,7 @@ from .models import Wallet
 # Implement AES encryption algorithms (e.g., using Python's cryptography library) to encrypt sensitive data, such as private keys or user credentials, before storing them in the database.
 # Apply encryption/decryption logic within the appropriate views to protect data during transmission or storage.
 
-# Example AES encryption and decryption functions
+# AES encryption and decryption functions
 
 
 def encrypt_data(data, encryption_key):
@@ -49,6 +49,12 @@ def create_bitcoin_wallet(user):
     # Perform additional operations as needed
 
     return bitcoin_wallet
+
+# Send bitcopin_utils
+def retrieve_bitcoin_blockchain_data():
+    # logics
+    retrieve_bitcoin_blockchain_data(UserWarning)
+
 
 
 def base58encode(v):
