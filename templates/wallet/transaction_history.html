@@ -1,0 +1,12 @@
+<!-- templates/wallet/transaction_history.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Transaction History</h1>
+  <!-- Add your content here -->
+  <ol>
+    {% for transaction in transactions %}
+      <li>{{ transaction }}</li>
+    {% endfor %}
+  </ol>
+{% endblock %}

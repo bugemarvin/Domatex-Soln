@@ -1,3 +1,9 @@
 replit.nix
 .*swp
-
+.env
+*__pycache__
+git_manager.sh
+*.pyc
+.vscode/launch.json
+base58
+# .vscode/settings.json
