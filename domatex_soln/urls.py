@@ -23,4 +23,9 @@ from wallet.models import Wallet
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('/wallet/', include('wallet.urls')),
+from django.contrib import admin
+from django.urls import path
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
 ]
