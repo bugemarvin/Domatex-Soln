@@ -1,0 +1,1 @@
+This folder contatins all the respective template directories for the respective apps and the root app directory

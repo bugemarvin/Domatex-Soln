@@ -3,6 +3,10 @@
         "Soln"
     ],
     "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    "python.formatting.provider": "none"
+    ]
         "editor.defaultFormatter": "ms-python.autopep8"
     },
     "python.formatting.provider": "none"

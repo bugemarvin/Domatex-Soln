@@ -1,0 +1,15 @@
+<!-- templates/wallet/token_transfer.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Token Transfer</h1>
+  <!-- Add your content here -->
+  <form method="post">
+    {% csrf_token %}
+    <label for="recipient_address">Recipient Address:</label>
+    <input type="text" name="recipient_address">
+    <label for="amount">Amount:</label>
+    <input type="text" name="amount">
+    <button type="submit">Transfer</button>
+  </form>
+{% endblock %}
