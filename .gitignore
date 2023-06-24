@@ -7,3 +7,4 @@ git_manager.sh
 .vscode/launch.json
 base58
 # .vscode/settings.json
+*.pyc
